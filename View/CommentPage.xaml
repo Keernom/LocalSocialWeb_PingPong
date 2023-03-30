@@ -1,0 +1,75 @@
+﻿<Page x:Class="Kursovik_Kocherzhenko.View.CommentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kursovik_Kocherzhenko.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CommentPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Left">
+                <Image x:Name="postAuthorImage" Height="40"/>
+                <Button Name="postAuthorName"/>
+            </StackPanel>
+
+            <Border Background="LightGray" BorderBrush="#00ADB5" 
+                BorderThickness="2" CornerRadius="15" Margin="10, 10, 10, 0"
+                    HorizontalAlignment="Left">
+                <TextBlock Text="{Binding PostText}" FontSize="20"
+                   HorizontalAlignment="Left" Padding="10"/>
+            </Border>
+            <StackPanel Orientation="Horizontal" Margin="15, 0"
+                        VerticalAlignment="Bottom">
+                <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Left"
+                                Name ="LikesPanel">
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Left"
+                                Name ="CommentsPanel">
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <Border BorderBrush="#00ADB5" BorderThickness="1"
+                VerticalAlignment="Bottom"/>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden"
+                      CanContentScroll="False" Margin="15,0" Grid.Column="1"
+                      Name="Scroller" Grid.ColumnSpan="2">
+            <StackPanel Name="PostCommentResult" HorizontalAlignment="Stretch"
+                       VerticalAlignment="Top" Orientation="Vertical">
+            </StackPanel>
+        </ScrollViewer>
+        
+        <Border BorderBrush="#00ADB5" BorderThickness="1"
+                VerticalAlignment="Top" Grid.Row="2"/>
+
+        <Grid Grid.Row="2" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" BorderBrush="#00ADB5" 
+                    BorderThickness="2" CornerRadius="15"
+                    Background="White"/>
+            <TextBox  Name="MessageBox"
+                 Text="{Binding CommentText}"
+                 HorizontalAlignment="Stretch"
+                 FontSize="20" Margin="10" VerticalContentAlignment="Center"
+                 TextWrapping="Wrap" BorderThickness="0"/>
+            <Button Grid.Column="1" Content="Отправить"
+                    Command="{Binding SendComment}" Margin="10"/>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,64 @@
+﻿<Page x:Class="Kursovik_Kocherzhenko.View.WikiPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Kursovik_Kocherzhenko.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="WikiPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="40" VerticalAlignment="Center"
+                   HorizontalAlignment="Center" FontStyle="Italic"
+                   FontWeight="DemiBold" 
+                   Text="Как играть в настольный теннис?"/>
+        <Border Background="Transparent"  BorderBrush="#00ADB5"
+                BorderThickness=".5" VerticalAlignment="Bottom"/>
+
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" Grid.Row="1"
+                      CanContentScroll="False">
+            <Border Background="LightGray" CornerRadius="25" 
+                    Margin="15,15" BorderBrush="#00ADB5"
+                    BorderThickness="1" Padding="10">
+                <StackPanel HorizontalAlignment="Stretch"
+                       VerticalAlignment="Top" Orientation="Vertical">
+                    <TextBlock Text="Начисление очков" FontSize="30"
+                           FontWeight="DemiBold"/>
+                    <TextBlock FontSize="20" FontWeight="DemiBold"
+                               TextWrapping="Wrap">
+                        Правила игры в настольный теннис обычно начинаются с обсуждения партии.<LineBreak/>
+                        <LineBreak/>
+                        1) Соответственно, тот игрок, который первым наберёт 11 баллов, будет считаться победителем.<LineBreak/>
+                        2) Если во время партии у вас счёт 10-10, то победителем будет считаться тот, кто первым получит 12 баллов.<LineBreak/>
+                        3) После завершения партии игрокам необходимо поменяться местами. Обычно на турнирах проводят по 5 партий. Победителем считается тот, кто выиграл 3 из них.<LineBreak/>
+                       
+                        Получение баллов:<LineBreak/>
+                        <LineBreak/>
+                        Если соперник неправильно сделал подачу, то дополнительное очко начисляется вам.<LineBreak/>
+                        Если при подаче мячик ударился на вашей стороне 2 раза вместо одного, то балл переходит противнику.<LineBreak/>
+                        После подачи мячик перелетел через сетку, но не ударился об стол на стороне противника. В таком случае балл переходит сопернику.<LineBreak/>
+                        Вы отбили мяч тогда, когда он ещё не ударился об стол. В этом случае вы не получаете балл, соперник лидирует.<LineBreak/>
+                    </TextBlock>
+                    <TextBlock Text="Подача" FontSize="30"
+                           FontWeight="DemiBold"/>
+                    <TextBlock FontSize="20" FontWeight="DemiBold"
+                               TextWrapping="Wrap">
+                        Изучая правила игры, необходимо обратить особое внимание на подачу. Она является одним из основных элементов партии.<LineBreak/>
+                        <LineBreak/>
+                        1) Чтобы подать мяч, необходимо подкинуть его вверх от ладони на 16 см.<LineBreak/>
+                        2) Далее отбить его так, чтобы он ударился один раз на вашей половине, перепрыгнул через сетку и один раз ударился на стороне соперника.<LineBreak/>
+                        3) Если мяч не перелетел через сетку и остался на вашей половине, то вы можете сделать переподачу.<LineBreak/>
+                        4) Далее каждый игрок отбивает мячик так, чтобы он попадал лишь на сторону противника.<LineBreak/>
+                        <LineBreak/>
+                    </TextBlock>
+                    <Image Source="/View/Images/instr.jpg"/>
+                </StackPanel>
+            </Border>
+        </ScrollViewer>
+    </Grid>
+</Page>
